@@ -58,7 +58,11 @@
         [alert addAction:cancelAction];
         
         //确认
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"到最后一个" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            _index = [_detailNumbers count]-1;
+            _nameText.text = [_detailNumbers objectAtIndex:_index];
+            _imagePath = [_detailIcons objectAtIndex:_index];
+            _numberImg.image = [UIImage imageNamed:_imagePath];
         }];
         
         [alert addAction:okAction];
@@ -89,7 +93,11 @@
         [alert addAction:cancelAction];
         
         //确认
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"到第一个" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            _index = 0;
+            _nameText.text = [_detailNumbers objectAtIndex:_index];
+            _imagePath = [_detailIcons objectAtIndex:_index];
+            _numberImg.image = [UIImage imageNamed:_imagePath];
         }];
         
         [alert addAction:okAction];
